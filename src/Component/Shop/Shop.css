@@ -1,0 +1,13 @@
+.shopping-sector {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.shoping-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 3rem 5rem;
+}
+
+.order-summary {}
