@@ -7,8 +7,6 @@ import NotFoundCartItem from "./NotFoundCartItem";
 const CartItem = ({ cart, removeCartItem }) => {
   const { img, price, name, shipping, id } = cart;
 
-  console.log(cart);
-
   return (
     <div className="cart-design">
       <div>

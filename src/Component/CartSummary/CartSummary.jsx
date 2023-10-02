@@ -1,7 +1,8 @@
 import React from "react";
 import "./CartSummary.css";
+import { TrashIcon, WindowIcon } from "@heroicons/react/24/solid";
 
-const CartSummary = ({ cart }) => {
+const CartSummary = ({ cart, handleClearCart, children }) => {
   let quantity = 0;
   let totalPrice = 0;
   let totalShipping = 0;
@@ -24,6 +25,17 @@ const CartSummary = ({ cart }) => {
         <p>Total Shipping Charge : ${totalShipping.toFixed(2)}</p>
         <p>Tax: ${tax.toFixed(2)}</p>
         <h4>Grand Total: ${grandTotal.toFixed(2)}</h4>
+      </div>
+      <div>
+        <button
+          onClick={handleClearCart}
+          style={{ background: "#FF3030" }}
+          className="flex w-full mb-2 items-center rounded-md text-white justify-between"
+        >
+          Clear Cart <TrashIcon className="h-6 w-6 text-white" />
+        </button>
+
+        {children}
       </div>
     </div>
   );

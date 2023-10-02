@@ -13,6 +13,21 @@
 .order-summary {
     background: #FFE0B3;
     position: sticky;
-    top: 3.9rem;
+    top: 3.7rem;
     height: 100vh;
+}
+
+@media only screen and (max-width:688px) {
+    .shopping-sector {}
+
+    .shoping-cards-container {
+        grid-template-columns: 1fr;
+        margin: 2rem 4rem;
+        gap: 5px;
+
+    }
+
+    .order-summary {
+        display: none;
+    }
 }

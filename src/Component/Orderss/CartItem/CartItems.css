@@ -29,3 +29,9 @@
     background: #f2c9c985;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 688px) {
+    .cart-design {
+        width: 100%;
+    }
+}

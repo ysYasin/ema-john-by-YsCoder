@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import CartSummary from "../CartSummary/CartSummary";
 import "./Order.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CartItem from "./CartItem/CartItem";
-import { removeFromDb } from "../../utilities/fakedb";
+import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
 import NotFoundCartItem from "./CartItem/NotFoundCartItem";
+import { WindowIcon } from "@heroicons/react/24/solid";
 
 const Orders = () => {
   const storedCarts = useLoaderData();
@@ -16,6 +17,10 @@ const Orders = () => {
     removeFromDb(id);
   };
 
+  const handleClearCart = () => {
+    setCarts([]);
+    deleteShoppingCart();
+  };
   return (
     <div className="shopping-sector ss-inOp" style={{}}>
       <div className="">
@@ -32,7 +37,20 @@ const Orders = () => {
         )}
       </div>
       <div className="order-summary-inOp">
-        <CartSummary key={carts.id} cart={carts}></CartSummary>
+        <CartSummary
+          handleClearCart={handleClearCart}
+          key={carts.id}
+          cart={carts}
+        >
+          <Link to="/proceedCheckout">
+            <button
+              style={{ background: "#F90" }}
+              className="flex w-full mb-2 items-center rounded-md text-white justify-between"
+            >
+              Proceed Checkout <WindowIcon className="h-6 w-6 text-white" />
+            </button>
+          </Link>
+        </CartSummary>
       </div>
     </div>
   );

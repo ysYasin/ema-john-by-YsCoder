@@ -8,6 +8,8 @@ import Orders from "./Component/Orderss/Orders.jsx";
 import Inventory from "./Component/Inventory/Inventory.jsx";
 import Login from "./Component/Loginpage/Login.jsx/Login.jsx";
 import CardProductLoadewr from "./CardProductLoader/CardProductLoader.js";
+import ProceedChackout from "./Component/ProceedChackout/ProceedChackout.jsx";
+import ErrorPage from "./Component/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Shop></Shop>,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/orders",
@@ -31,7 +34,15 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
+      {
+        path: "proceedCheckout",
+        element: <ProceedChackout />,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

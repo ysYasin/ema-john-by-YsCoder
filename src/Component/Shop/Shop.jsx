@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import Product from "../Product/Product";
 import CartSummary from "../CartSummary/CartSummary";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../../utilities/fakedb";
+import { ArrowRightIcon, WindowIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -42,8 +48,12 @@ const Shop = () => {
     setCart(savedCart);
   }, [products]);
   //   console.log(cart);
+  const handleClearCart = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
   return (
-    <div className="shopping-sector">
+    <div className="shopping-sector ">
       <div className="shoping-cards-container">
         {products.map((product) => (
           <Product
@@ -54,7 +64,16 @@ const Shop = () => {
         ))}
       </div>
       <div className="order-summary">
-        <CartSummary cart={cart}></CartSummary>
+        <CartSummary cart={cart} handleClearCart={handleClearCart}>
+          <Link to="/orders">
+            <button
+              style={{ background: "#F90" }}
+              className="flex w-full mb-2 items-center rounded-md text-white justify-between"
+            >
+              Review Order <ArrowRightIcon className="h-6 w-6 text-white" />
+            </button>
+          </Link>
+        </CartSummary>
       </div>
     </div>
   );

@@ -34,3 +34,30 @@
     width: 100%;
     left: 0;
 }
+
+@media only screen and (max-width:688px) {
+    .header {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .navigator {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 4.45rem;
+        left: 0;
+        background: #000;
+        padding: 2rem 2rem;
+        gap: 2rem;
+        height: 100vh;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .mbl-nav-trure {
+        left: -12rem;
+    }
+
+    .mbl-nav-false {
+        left: 0;
+    }
+}
