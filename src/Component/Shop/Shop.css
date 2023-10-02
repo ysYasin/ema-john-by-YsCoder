@@ -10,4 +10,9 @@
     margin: 3rem 5rem;
 }
 
-.order-summary {}
+.order-summary {
+    background: #FFE0B3;
+    position: sticky;
+    top: 3.9rem;
+    height: 100vh;
+}

@@ -15,7 +15,9 @@ const CartSummary = ({ cart }) => {
   const grandTotal = totalPrice + totalShipping + tax;
   return (
     <div className="cartSammary">
-      <h2 style={{ textAlign: "center" }}>Product Summary</h2>
+      <h2 style={{ textAlign: "center" }} className="text-3xl font-semibold">
+        Product Summary
+      </h2>
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         <p>Selected Items : {quantity}</p>
         <p>Total price : ${totalPrice.toFixed(2)}</p>

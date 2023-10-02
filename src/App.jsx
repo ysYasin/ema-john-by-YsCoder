@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./Component/Header/Header";
 import Shop from "./Component/Shop/Shop";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <Shop></Shop>
+      <Outlet />
     </div>
   );
 }

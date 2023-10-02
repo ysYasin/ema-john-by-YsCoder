@@ -1,0 +1,16 @@
+.order-summary-inOp {
+    background: #FFE0B3;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    position: sticky;
+    height: fit-content;
+    top: 14rem;
+}
+
+.ss-inOp {
+    grid-template-columns: 3fr 2fr !important;
+    margin: 5rem;
+    gap: 5rem;
+}
