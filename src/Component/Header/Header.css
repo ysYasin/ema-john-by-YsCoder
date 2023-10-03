@@ -35,8 +35,8 @@
     left: 0;
 }
 
-button {
-    /* display: none; */
+.toggle-button {
+    display: none;
 }
 
 @media only screen and (max-width:688px) {
@@ -63,5 +63,9 @@ button {
 
     .mbl-nav-false {
         left: 0;
+    }
+
+    .toggle-button {
+        display: flex;
     }
 }

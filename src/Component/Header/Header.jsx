@@ -19,7 +19,7 @@ const Header = () => {
         <Link to="/login">Login</Link>
       </div>
       <button
-        className="bg-transparent transition-all outline-none border-none md:hidden"
+        className="toggle-button bg-transparent transition-all outline-none border-none"
         onClick={() => setState(!state)}
       >
         {" "}
