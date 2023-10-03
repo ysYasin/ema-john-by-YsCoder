@@ -35,6 +35,10 @@
     left: 0;
 }
 
+button {
+    /* display: none; */
+}
+
 @media only screen and (max-width:688px) {
     .header {
         padding: 0.5rem 1rem 0.5rem 1rem;
