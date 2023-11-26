@@ -12,7 +12,8 @@ const Orders = () => {
   const [carts, setCarts] = useState(storedCarts);
 
   const removeCartItem = (id) => {
-    const remainingItems = carts.filter((cart) => cart.id !== id);
+    const remainingItems = carts.filter((cart) => cart._id !== id);
+    console.log(id, remainingItems);
     setCarts([...remainingItems]);
     removeFromDb(id);
   };
@@ -27,7 +28,7 @@ const Orders = () => {
         {carts.length !== 0 ? (
           carts.map((cart) => (
             <CartItem
-              key={cart.id}
+              key={cart._id}
               cart={cart}
               removeCartItem={removeCartItem}
             ></CartItem>
@@ -39,7 +40,7 @@ const Orders = () => {
       <div className="order-summary-inOp">
         <CartSummary
           handleClearCart={handleClearCart}
-          key={carts.id}
+          key={carts._id}
           cart={carts}
         >
           <Link to="/proceedCheckout">

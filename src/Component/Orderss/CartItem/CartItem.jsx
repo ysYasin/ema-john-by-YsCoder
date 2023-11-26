@@ -1,11 +1,8 @@
-import React from "react";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import "./CartItems.css";
-import { useNavigate } from "react-router-dom";
-import NotFoundCartItem from "./NotFoundCartItem";
 
 const CartItem = ({ cart, removeCartItem }) => {
-  const { img, price, name, shipping, id } = cart;
+  const { img, price, name, shipping, _id } = cart;
 
   return (
     <div className="cart-design">
@@ -19,7 +16,7 @@ const CartItem = ({ cart, removeCartItem }) => {
       </div>
       <div className="trushIcon">
         <button
-          onClick={() => removeCartItem(id)}
+          onClick={() => removeCartItem(_id)}
           style={{
             padding: "0",
             margin: "0",

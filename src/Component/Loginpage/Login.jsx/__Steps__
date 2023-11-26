@@ -1,0 +1,32 @@
+/**
+== Login convert setting ==
+
+1/ un protect route component first diclier the useLocation Hook to get {zei locetion e zawar kotha chilo seita,}
+2/ zodi login na thake tahole autometic zeno login page e cole zay se bebostha korte Navigate hook e login page ke
+redirect korte hobe
+3/ ze huto kankhito page e na gite login page e cole geche, ebar amader kaje lagbe prothome amra ze page e zete caisi
+sei route ta, seta to amra use location hook er maddhome agei niye rekhechi
+4/ ebar react theke import kora navigate component e ekta state attribute diclier korte hobe, ar sei state e
+distructured ekta object thakbe
+5/ sei object e from namok ekta properti thakbe ar property er value hisabe location namok variable ba useLocation hook
+k zei variable e rekhechi sei vari able k dite hobe,
+zemon : const location = useLocation()
+<Navigate to="/login" state={{from:location}}></Navigate>
+
+// ebar login page e giye amar useLocation hook k call korte hobe,
+2/ ei hook besh kichu jinish provite kore, tar moddhe onno tomo holo pathname and state,
+3/ zodi redirect kora chara direct login page e zai tahole state:null thakbe
+4/ zehuto amra kore onno page e zete giye login na thakar karone login page e redirect hoye gesi
+tai state er value hisabe amra protect route page theke zei component set kore diyechi seta thakbe;
+seta muloto state er moddhe from namok ekta property er value hisabe thakbe,
+5/ eibar amra login page e ze useLocation hook bebohar korechi ta console korle (Hook.sate.from.pathname) k console
+korle muloto zei page e zawar kotha chilo ze page er path ta pabo,
+6/ login buttone click korle zei fuction run hobe se funtion r ekebare nice <Navigate to={(Hook.sate.from.pathname)}>
+</Navigate> eita declier korte hobe
+7/ login page e zehuto amra duibhabe zete pari , direct login path, othoba redirect, sutorang || or condition diye
+direct home er path diye dibo , eto koro no problem do furti
+
+**/
+
+
+

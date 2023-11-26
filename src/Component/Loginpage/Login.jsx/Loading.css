@@ -1,0 +1,51 @@
+:root {
+    --eset-color: #eed248
+}
+
+.login-field {
+    border: 1px solid var(--eset-color);
+    width: 500px;
+    padding: 2rem;
+    margin: 5rem auto;
+    border-radius: 18px;
+    box-shadow: 5px 5px 10px var(--eset-color);
+}
+
+#inp {
+    height: 3rem;
+    border: 1px solid var(--eset-color);
+    border-radius: 6px;
+    padding-left: 1rem;
+    margin-bottom: 5px;
+}
+
+#inp:focus {
+    outline: 1.5px solid var(--eset-color);
+}
+
+.log-btn {
+    width: 100%;
+    background: var(--eset-color);
+    margin: 1rem 0;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.log-btn:hover {
+    cursor: pointer;
+    background: #ffd813;
+}
+
+#googleSignIn {
+    background: indigo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: aliceblue;
+    margin: 2rem auto 0;
+}
+
+#googleSignIn:hover {
+    color: rgb(195, 195, 195);
+}

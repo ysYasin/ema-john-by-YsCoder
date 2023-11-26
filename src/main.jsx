@@ -10,6 +10,9 @@ import Login from "./Component/Loginpage/Login.jsx/Login.jsx";
 import CardProductLoadewr from "./CardProductLoader/CardProductLoader.js";
 import ProceedChackout from "./Component/ProceedChackout/ProceedChackout.jsx";
 import ErrorPage from "./Component/ErrorPage/ErrorPage.jsx";
+import Register from "./Component/RegisterPgae/Register.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import ProtectedRoute from "./ProtectedRoute/protectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,10 +23,15 @@ const router = createBrowserRouter([
         path: "/",
         element: <Shop></Shop>,
         errorElement: <ErrorPage />,
+        loader: () => fetch(`http://localhost:5400/totalProductItem`),
       },
       {
         path: "/orders",
-        element: <Orders />,
+        element: (
+          <ProtectedRoute>
+            <Orders />
+          </ProtectedRoute>
+        ),
         loader: CardProductLoadewr,
       },
       {
@@ -33,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "proceedCheckout",
@@ -47,6 +59,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

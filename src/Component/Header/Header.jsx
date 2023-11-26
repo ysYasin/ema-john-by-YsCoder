@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
 import { Bars3CenterLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
 
 import logo from "../../images/Logo.svg";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../AuthProvider/AuthProvider";
 
 const Header = () => {
   const [state, setState] = useState(false);
+  const { user, logout } = useContext(UserContext);
+
+  // handle sign out
+  function handleSignOut() {
+    logout()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <nav className="header">
       <div className="logo">
@@ -14,9 +25,18 @@ const Header = () => {
       </div>
       <div className={`navigator ${state ? "mbl-nav-false" : "mbl-nav-trure"}`}>
         <Link to="/"> Home</Link>
-        <Link to="/orders">Ordes</Link>
+        {user && <Link to="/orders">Ordes</Link>}
         <Link to="/inventory">Inventory</Link>
-        <Link to="/login">Login</Link>
+
+        {user && <Link>wellcome {user.displayName}</Link>}
+        {(user && (
+          <button
+            onClick={handleSignOut}
+            className="bg-slate-600 text-white mx-3"
+          >
+            signOut
+          </button>
+        )) || <Link to="/login">Login</Link>}     
       </div>
       <button
         className="toggle-button bg-transparent transition-all outline-none border-none"

@@ -31,3 +31,16 @@
         display: none;
     }
 }
+
+@media only screen and (max-width:990px) and (min-width:690px) {
+    .shopping-sector {}
+
+    .shoping-cards-container {
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem 4rem;
+        gap: 5px;
+
+    }
+
+
+}
